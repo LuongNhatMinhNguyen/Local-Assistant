@@ -13,6 +13,6 @@ def collect_media_entry(category: str, title: str, progress: str):
         "category": category,
         "title": title,
         "progress": progress,
-        "timestamp": datetime.now()
+        "timestamp":datetime.now(timezone.utc).isoformat()
         }
     return media_entry
