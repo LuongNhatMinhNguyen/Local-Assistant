@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 def collect_media_entry(category: str, title: str, progress: str):
     """

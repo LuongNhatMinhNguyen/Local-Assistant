@@ -1,6 +1,6 @@
 import duckdb
 
-DB_File = "assistant.db"
+DB_File = "data/assistant.db"
 
 def get_db_connection():
     return duckdb.connect(DB_File)
