@@ -1,19 +1,19 @@
 import duckdb
 
-DB_FILE = 'assistant.db'
+DB_File = "assistant.db"
+
 def get_db_connection():
-    return duckdb.connect(DB_FILE)
+    return duckdb.connect(DB_File)
 
 def initialize_database():
     conn = get_db_connection()
     conn.execute("""
-        CREATE TABLE IF NOT EXISTS media_log (
-            id INTEGER PRIMARY KEY,
+        CREATE TABLE IF NOT EXISTS media_logs (
             category TEXT,
             title TEXT,
             progress TEXT,
-            logged_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            timestamp TIMESTAMP
         )
     """)
     conn.close()
-    print(" DuckDB initialized: 'media_log' table is ready!")
+    print("Database initialized and media_logs table created if it didn't exist.")
