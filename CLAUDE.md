@@ -1,0 +1,1 @@
+“I’m learning. Guide me with hints and explanations, don’t edit files unless I ask, show small snippets only when I’m stuck.”
