@@ -1,11 +1,11 @@
 from modules.analytics_pipeline.collector import collect_media_entry
 from modules.analytics_pipeline.transformer import normalize_media_entry
 from modules.analytics_pipeline.loader import load_media_entry
-from data.database import intialize_database 
+from data.database import initialize_database, intialize_database 
 
 
 def main():
-    intialize_database()
+    initialize_database()
     print("Enter the data: ")
     category = input("Category: ")
     title = input("Title: ")
