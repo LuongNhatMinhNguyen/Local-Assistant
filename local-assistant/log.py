@@ -1,7 +1,7 @@
 from modules.analytics_pipeline.collector import collect_media_entry
 from modules.analytics_pipeline.transformer import normalize_media_entry
 from modules.analytics_pipeline.loader import load_media_entry
-from data.database import initialize_database, intialize_database 
+from data.database import initialize_database, initialize_database 
 
 
 def main():
