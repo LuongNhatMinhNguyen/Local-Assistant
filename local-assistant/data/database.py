@@ -11,7 +11,7 @@ def initialize_database():
         CREATE TABLE IF NOT EXISTS media_logs (
             category TEXT,
             title TEXT,
-            progress TEXT,
+            status TEXT,
             timestamp TIMESTAMP
         )
     """)

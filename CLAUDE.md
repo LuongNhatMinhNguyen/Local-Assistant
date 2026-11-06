@@ -19,7 +19,7 @@ local-assistant/            ← Python package; run commands from here
   log.py                    ← CLI entry point: records a media entry
   data/database.py          ← DuckDB connection and table setup (data/assistant.db)
   modules/
-    analytics_pipeline/     ← media log module (games, films, manga, books)
+    media_log/     ← media log module (games, films, manga, books)
       collector.py          ← builds the raw entry with a UTC timestamp
       transformer.py        ← cleans and normalizes fields
       loader.py             ← inserts into DuckDB table media_logs
