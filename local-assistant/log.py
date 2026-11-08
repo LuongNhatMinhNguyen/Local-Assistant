@@ -6,7 +6,7 @@ from modules.media_log.schema import MediaItem, StatusChange
 from pydantic import ValidationError
 
 
-def main():
+def main() -> None:
     initialize_database()
     print("Enter the data: ")
     category = input("Category: ")

@@ -7,7 +7,7 @@ Status = Literal["ongoing", "planned", "finished", "revisiting", "dropped", "on_
 Category = Literal["film", "manga", "lightnovel", "game", "book", "anime"]
 
 
-def utc_now():
+def utc_now() -> datetime:
     return datetime.now(timezone.utc)
 
 class MediaItem(BaseModel):

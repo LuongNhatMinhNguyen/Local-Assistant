@@ -2,12 +2,12 @@ import duckdb
 
 DB_FILE = "data/assistant.db"
 
-def get_db_connection():
+def get_db_connection() -> duckdb.DuckDBPyConnection:
     conn = duckdb.connect(DB_FILE)
     conn.execute( "SET TimeZone = 'UTC'")
     return conn
 
-def initialize_database():
+def initialize_database() -> None:
     conn = get_db_connection()
     # Legacy table for testing
     conn.execute("""

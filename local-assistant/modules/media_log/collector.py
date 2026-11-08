@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-def collect_media_entry(category: str, title: str, status: str):
+def collect_media_entry(category: str, title: str, status: str) -> dict:
     """
     Collects media entry data and returns a dictionary containing the information.
 
