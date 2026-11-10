@@ -1,4 +1,4 @@
-def normalize_media_entry(entry: dict):
+def normalize_media_entry(entry: dict) -> dict:
     """
     Normalizes the media entry data by cleaning and formatting the fields.
     """
