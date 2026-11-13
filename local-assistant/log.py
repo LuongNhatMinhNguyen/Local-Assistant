@@ -1,11 +1,9 @@
 from modules.media_log.collector import collect_media_entry
 from modules.media_log.transformer import normalize_media_entry
-from modules.media_log.loader import load_media_entry
+from modules.media_log.loader import find_media_item, update_media_item_status, save_media_item, save_status_change
 from data.database import initialize_database
 from modules.media_log.schema import MediaItem, StatusChange
 from pydantic import ValidationError
-from modules.media_log.loader import save_media_item, save_status_change
-
 def main() -> None:
     initialize_database()
     print("Enter the data: ")
@@ -19,9 +17,17 @@ def main() -> None:
     except ValidationError as error:
         print(error)
         return
-    change = StatusChange(item_id=item.id, status=item.status)
-    save_media_item(item)
-    save_status_change(change)
+    
+    found = find_media_item(item.title, item.category)
+
+    if found is None:
+        save_media_item(item)
+        save_status_change(StatusChange(item_id=item.id, status=item.status))
+
+    else:
+        update_media_item_status(found, item.status)
+        save_status_change(StatusChange(item_id=found, status=item.status))
+
     print("\nData collected successfully.") 
 
 if __name__ == "__main__":

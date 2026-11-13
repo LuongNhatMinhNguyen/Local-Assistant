@@ -47,7 +47,7 @@ def find_media_item(title: str, category: str) -> UUID | None:
         SELECT id FROM media_items
         WHERE lower(title) = lower(?) AND category = ?
     """,[title, category]).fetchone()
-    conn.close
+    conn.close()
     if row is None:
         return None
     return row[0]
@@ -58,6 +58,6 @@ def update_media_item_status(item_id: UUID, status: str) -> None:
         UPDATE media_items SET status = ? WHERE id = ?
     """,[status, item_id] 
     )
-    conn.close
+    conn.close()
 
     
