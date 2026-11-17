@@ -6,6 +6,5 @@ def normalize_media_entry(entry: dict) -> dict:
         "category": entry["category"].lower().strip(),
         "title": entry["title"].strip(),
         "status": entry["status"].strip().lower(),
-        "timestamp": entry["timestamp"]
     }
     return cleaned

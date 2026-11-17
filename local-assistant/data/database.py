@@ -9,15 +9,6 @@ def get_db_connection() -> duckdb.DuckDBPyConnection:
 
 def initialize_database() -> None:
     conn = get_db_connection()
-    # Legacy table for testing
-    conn.execute("""
-        CREATE TABLE IF NOT EXISTS media_logs (     
-            category TEXT,
-            title TEXT,
-            status TEXT,
-            timestamp TIMESTAMP
-        )
-    """)
     # Data entries go here
     conn.execute( """
         CREATE TABLE IF NOT EXISTS media_items(
@@ -35,7 +26,6 @@ def initialize_database() -> None:
         CREATE TABLE IF NOT EXISTS status_changes(
             item_id UUID NOT NULL REFERENCES media_items(id),
             status TEXT NOT NULL,
-            timestamp TIMESTAMP NOT NULL
         )
     """)
 

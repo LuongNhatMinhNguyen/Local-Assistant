@@ -2,18 +2,7 @@ from data.database import get_db_connection
 from modules.media_log.schema import MediaItem, StatusChange
 from uuid import UUID, uuid4
 
-def load_media_entry(entry: dict) -> None:
-    conn = get_db_connection()
-    conn.execute("""
-        INSERT INTO media_logs (category, title, status, timestamp)
-        VALUES (?, ?, ?, ?)
-    """, (
-            entry["category"], 
-            entry["title"], 
-            entry["status"], 
-            entry["timestamp"]))
-    conn.close()
-    
+
 
 def save_media_item(item: MediaItem) -> None:
     conn = get_db_connection()

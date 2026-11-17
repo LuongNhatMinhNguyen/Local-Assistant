@@ -1,4 +1,3 @@
-from datetime import datetime, timezone
 
 def collect_media_entry(category: str, title: str, status: str) -> dict:
     """
@@ -13,6 +12,5 @@ def collect_media_entry(category: str, title: str, status: str) -> dict:
         "category": category,
         "title": title,
         "status": status,
-        "timestamp":datetime.now(timezone.utc).isoformat()
         }
     return media_entry
