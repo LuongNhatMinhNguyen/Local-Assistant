@@ -26,6 +26,7 @@ def initialize_database() -> None:
         CREATE TABLE IF NOT EXISTS status_changes(
             item_id UUID NOT NULL REFERENCES media_items(id),
             status TEXT NOT NULL,
+            timestamp TIMESTAMP NOT NULL
         )
     """)
 

@@ -23,7 +23,7 @@ local-assistant/            ← Python package; run commands from here
       collector.py          ← builds the raw entry 
       transformer.py        ← cleans and normalizes fields
       loader.py             ← inserts into DuckDB table media_items and status_changes
-      schema.py             ← pydantic models (in progress)
+      schema.py             ← pydantic models
       analysis.py           ← pandas summaries (planned)
       dashboard.py          ← Streamlit dashboard (planned)
 ```
@@ -48,7 +48,7 @@ Run: `cd local-assistant && python log.py`
 
 ## Roadmap
 
-1. [DONE] `MediaEntry` + `StatusChange` pydantic model; pipeline passes models instead of dicts
+1. [DONE] `MediaItem` + `StatusChange` pydantic model; pipeline passes models instead of dicts
 2. [DONE] Initialize the database on startup so a fresh clone runs
 3. [DONE] `requirements.txt` in UTF-8, add pandas
 4. [ ] `analysis.py`: summaries (entries per category, activity over time)
